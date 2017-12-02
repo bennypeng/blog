@@ -1,9 +1,42 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+//@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
-@import "variables";
+//@import "variables";
 
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+//@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+$navbar-color: #3c3e42;
+
+body {
+  padding-top: 60px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.navbar-inverse {
+  background-color: $navbar-color;
+}
+
+#logo {
+  float: left;
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -1px;
+  font-weight: bold;
+  &:hover {
+    color: #fff;
+  }
+}

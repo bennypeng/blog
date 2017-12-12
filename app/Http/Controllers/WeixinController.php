@@ -11,7 +11,7 @@ class WeixinController extends Controller
       $timestamp = $request->input('timestamp');
       $nonce     = $request->input('nonce');
       $echostr   = $request->input('echostr');
-      $token     = "v2sh.com";
+      $token     = "v2sh_com";
 
       $tmpArr = array($token, $timestamp, $nonce);
       sort($tmpArr, SORT_STRING);

@@ -22,3 +22,5 @@ Route::get('/about', 'StaticPagesController@about');
 
 Route::get('/wx/check/', 'WeixinController@checkSignature');
 Route::get('/wx/getAccessToken/', 'WeixinController@getAccessToken');
+
+Route::get('/test', 'TestController@index');

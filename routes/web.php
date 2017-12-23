@@ -28,6 +28,7 @@
 Route::group(
 	array('prefix' => 'wx', 'middleware' => []), function() {
 		Route::get('check', 'WeixinController@checkSignature');
-		Route::get('getAccessToken', 'WeixinController@getAccessToken');
+		Route::get('cmenu', 'WeixinController@createMenu');
+		//Route::get('getAccessToken', 'WeixinController@getAccessToken');
 	}
 );

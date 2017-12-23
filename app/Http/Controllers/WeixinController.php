@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 
+/**
+ * @resource 微信类
+ * 微信相关接口
+ */
 class WeixinController extends Controller
 {
     /**
-     * [checkSignature description]
+     * 验证token
      * @param  Request $request [description]
-     * @return [type]           [description]
+     * @return String           [description]
      */
     public function checkSignature(Request $request) {
 
@@ -33,7 +37,7 @@ class WeixinController extends Controller
     /**
      * 获取accessToken
      * @param  Client $client [description]
-     * @return [type]         [description]
+     * @return String         accessToken
      */
     public function getAccessToken(Client $client) {
       $url  = sprintf("https://api.weixin.qq.com/cgi-bin/token?grant_type=%s&appid=%s&secret=%s", "client_credential", getenv('WX_APPID'), getenv('WX_APPSECRET'));

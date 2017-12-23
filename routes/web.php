@@ -15,12 +15,19 @@
 #    return view('welcome');
 #});
 
-Route::get('/', 'StaticPagesController@home');
-Route::get('/help', 'StaticPagesController@help');
-Route::get('/about', 'StaticPagesController@about');
+//Route::get('/', 'StaticPagesController@home');
+//Route::get('/help', 'StaticPagesController@help');
+//Route::get('/about', 'StaticPagesController@about');
 
 
-Route::get('/wx/check/', 'WeixinController@checkSignature');
-Route::get('/wx/getAccessToken/', 'WeixinController@getAccessToken');
+//Route::get('/wx/check/', 'WeixinController@checkSignature');
+//Route::get('/wx/getAccessToken/', 'WeixinController@getAccessToken');
 
-Route::get('/test', 'TestController@index');
+//Route::get('/test', 'TestController@index');
+
+Route::group(
+	array('prefix' => 'wx', 'middleware' => []), function() {
+		Route::get('check', 'WeixinController@checkSignature');
+		Route::get('getAccessToken', 'WeixinController@getAccessToken');
+	}
+);
